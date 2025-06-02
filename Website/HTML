@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Portfolio</title>
+  <!-- Link to the CSS file -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Link to Google Material Icons for simple skill icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- Navigation Bar: Simple links to each section -->
+  <nav>
+    <!-- The 'href' with # links to sections on this page -->
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section: Your name and a short tagline -->
+  <section class="hero" id="home">
+    <h1>
+      <span class="first-name">Isaac</span>
+      <span class="last-name">Morfin</span>
+    </h1>
+    <p class="tagline">My first website!!</p>
+  </section>
+
+  <!-- Mission/About Section with image and text -->
+  <section class="mission" id="about">
+    <div class="mission-container">
+      <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=400&q=80" alt="Laptop" class="mission-img">
+      <div class="mission-text">
+        <h2>Bio</h2>
+        <p>
+          Hello! I'm Isaac Morfin, a budding web developer with a passion for creating beautiful and functional websites. I love learning new technologies and improving my skills every day. This is my first portfolio website, and I'm excited to share it with you!
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section: Skill badges -->
+  <section class="skills" id="skills">
+    <h2>Skills</h2>
+    <p>Here are a few of the skills I bring to the table:</p>
+    <div class="skill-badges">
+      <span class="skill-badge"><span class="material-icons">code</span> HTML</span>
+      <span class="skill-badge"><span class="material-icons">palette</span> CSS</span>
+      <span class="skill-badge"><span class="material-icons">javascript</span>javascript next skill</span>
+      <span class="skill-badge"><span class="material-icons">school</span>Arduino & C,C++</span>
+    </div>
+  </section>
+
+  <!-- Projects Section: Showcase your projects -->
+  <section class="projects" id="projects">
+    <h2>My Projects</h2>
+    <ul>
+      <li>
+        <strong>Project 1</strong><br>
+        Arduino project that uses a servo motor to open and close a door.
+      </li>
+      <li>
+        <strong>Project 2</strong><br>
+        A simple HTML and CSS project that showcases my first web page.
+      </li>
+    </ul>
+  </section>
+
+  <!-- Contact Section: How people can reach you -->
+  <section class="contact" id="contact">
+    <h2>Contact</h2>
+    <p>
+      You can email me at <a href="mailto:isaacmorfin2001@gmail.com">isaacmorfin2001@gmail.com</a>
+    </p>
+  </section>
+</body>
+</html>

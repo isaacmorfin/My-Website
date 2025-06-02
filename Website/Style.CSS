@@ -1,0 +1,149 @@
+/* ...existing code... */
+
+/* Add a background color and a simple background image to the whole page */
+body {
+  background-color: #e0f7fa; /* Light blue background color */
+  /* Add a background image from the web (you can change the URL to any image you like) */
+  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;       /* Make the image cover the whole background */
+  background-attachment: fixed; /* Keep the image fixed when scrolling */
+  margin: 0;
+  padding: 0;
+}
+
+/* Add a semi-transparent background to sections so text is easy to read */
+section {
+  background: rgba(255, 255, 255, 0.85); /* White with some transparency */
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 600px;
+  border-radius: 8px;
+}
+
+/* Style the navigation bar to be at the top right */
+.navbar ul {
+  list-style-type: none; /* Remove bullets */
+  margin: 0;
+  padding: 0;
+  text-align: right;     /* Move links to the right */
+}
+
+.navbar ul li {
+  display: inline;       /* Show links in a row */
+  margin-left: 15px;     /* Space between links */
+}
+
+.navbar ul li a {
+  color: white;          /* White text */
+  text-decoration: none; /* No underline */
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* Optional: Add a background color to the navbar */
+.navbar {
+  background-color: #333;
+  padding: 10px 0;
+}
+
+/* Hero section with background color */
+.hero {
+  background-color: #23406e; /* Deep blue */
+  color: #fff;
+  text-align: center;
+  padding: 50px 10px 30px 10px;
+  margin: 0;
+  border-radius: 0;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 0.2em;
+}
+
+.hero .first-name {
+  font-weight: bold;
+}
+
+.hero .last-name {
+  color: #4fc3f7; /* Accent color */
+  font-weight: bold;
+}
+
+.hero .tagline {
+  font-size: 1.2em;
+  margin-top: 10px;
+}
+
+/* Mission/About section with image and text side by side */
+.mission-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Stack on small screens */
+}
+
+.mission-img {
+  width: 200px;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.mission-text {
+  flex: 1;
+}
+
+.mission-text h2 {
+  color: #23406e;
+  margin-top: 0;
+}
+
+/* Skills section with colored background and badges */
+.skills {
+  background-color: #23406e;
+  color: #fff;
+  text-align: center;
+  border-radius: 0;
+}
+
+.skills h2 {
+  color: #fff;
+}
+
+.skill-badges {
+  margin-top: 15px;
+}
+
+.skill-badge {
+  display: inline-block;
+  background: #4fc3f7;
+  color: #23406e;
+  padding: 8px 16px;
+  border-radius: 16px;
+  margin: 5px 5px 0 0;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+.skill-badge .material-icons {
+  vertical-align: middle;
+  margin-right: 6px;
+  font-size: 1.1em;
+}
+
+/* Responsive: stack mission section on small screens */
+@media (max-width: 600px) {
+  .mission-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .mission-img {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 10px auto;
+    display: block;
+  }
+}
+
+/* ...existing code... */
