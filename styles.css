@@ -2,7 +2,7 @@
 
 /* Add a background color and a simple background image to the whole page */
 body {
-  background-color: #e0f7fa; /* Light blue background color */
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
   /* Add a background image from the web (you can change the URL to any image you like) */
   background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -10,6 +10,9 @@ body {
   background-attachment: fixed; /* Keep the image fixed when scrolling */
   margin: 0;
   padding: 0;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  background-position: center;
 }
 
 /* Add a semi-transparent background to sections so text is easy to read */
@@ -21,7 +24,19 @@ section {
   border-radius: 8px;
 }
 
-/* Style the navigation bar to be at the top right */
+/* Navigation Bar Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  background: rgba(255,255,255,0.95); /* Brighter background */
+  padding: 18px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
 .navbar ul {
   list-style-type: none; /* Remove bullets */
   margin: 0;
@@ -41,6 +56,40 @@ section {
   font-size: 16px;
 }
 
+.nav-link {
+  text-decoration: none;
+  color: #222; /* Much darker text */
+  font-size: 1.15em;
+  font-weight: bold;
+  position: relative;
+  transition: color 0.3s, background 0.3s;
+  padding: 8px 16px;
+  border-radius: 6px;
+  text-shadow: 0 1px 4px rgba(255,255,255,0.5); /* Subtle white shadow for contrast */
+}
+
+.nav-link::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0;
+  background: linear-gradient(90deg, #fc5c7d, #6a82fb);
+  border-radius: 2px;
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #fc5c7d, #6a82fb);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
 /* Optional: Add a background color to the navbar */
 .navbar {
   background-color: #333;
@@ -55,6 +104,22 @@ section {
   padding: 50px 10px 30px 10px;
   margin: 0;
   border-radius: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh; /* Adjust as needed for vertical centering */
+}
+
+/* Optional: Make the hero section stand out with a subtle background */
+.hero {
+  background: rgba(255,255,255,0.4); /* Light overlay for readability */
+  border-radius: 18px;
+  margin: 40px auto 32px auto;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.07);
+  padding: 40px 0;
 }
 
 .hero h1 {
@@ -62,8 +127,10 @@ section {
   margin-bottom: 0.2em;
 }
 
-.hero .first-name {
-  font-weight: bold;
+.hero .first-name, .hero .last-name {
+  display: inline-block;
+  font-size: 2.5em;
+  transition: color 1s, transform 1s;
 }
 
 .hero .last-name {
@@ -74,6 +141,10 @@ section {
 .hero .tagline {
   font-size: 1.2em;
   margin-top: 10px;
+  margin-top: 12px;
+  font-size: 1.3em;
+  color: #333;
+  text-align: center;
 }
 
 /* Mission/About section with image and text side by side */
@@ -132,6 +203,45 @@ section {
   font-size: 1.1em;
 }
 
+/* Example: Animate a button on hover */
+.button {
+  background: #6a82fb;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s, background 0.3s;
+  cursor: pointer;
+}
+
+.button:hover {
+  background: #fc5c7d;
+  transform: scale(1.1) rotate(-2deg);
+}
+
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 12px 20px;
+  font-size: 1em;
+  background: #6a82fb;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 0.7;
+  transition: opacity 0.3s, background 0.3s;
+  z-index: 1000;
+}
+
+#backToTop:hover {
+  opacity: 1;
+  background: #fc5c7d;
+}
+
 /* Responsive: stack mission section on small screens */
 @media (max-width: 600px) {
   .mission-container {
@@ -144,6 +254,11 @@ section {
     margin: 0 auto 10px auto;
     display: block;
   }
+}
+
+/* Enable smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
 }
 
 /* ...existing code... */

@@ -10,15 +10,13 @@
 </head>
 <body>
   <!-- Navigation Bar: Simple links to each section -->
-  <nav>
+  <nav class="navbar">
     <!-- The 'href' with # links to sections on this page -->
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
+    <a href="#home" class="nav-link">Home</a>
+    <a href="#about" class="nav-link">About</a>
+    <a href="#skills" class="nav-link">Skills</a>
+    <a href="#projects" class="nav-link">Projects</a>
+    <a href="#contact" class="nav-link">Contact</a>
   </nav>
 
   <!-- Hero Section: Your name and a short tagline -->
@@ -77,5 +75,69 @@
       You can email me at <a href="mailto:isaacmorfin2001@gmail.com">isaacmorfin2001@gmail.com</a>
     </p>
   </section>
+
+  <!-- Example: Bouncing Ball Animation -->
+  <div id="ball"></div>
+  <style>
+  #ball {
+    width: 50px;
+    height: 50px;
+    background: #43cea2;
+    border-radius: 50%;
+    position: fixed;      /* Fixed so it follows the viewport */
+    right: 30px;
+    top: 30px;            /* Initial position */
+    transition: top 0.2s ease;
+    z-index: 999;
+  }
+  </style>
+
+  <script>
+    // Move the ball as the page scrolls
+    window.addEventListener('scroll', function() {
+      const ball = document.getElementById('ball');
+      // Ball moves down as you scroll, but stays 30px from the top at the top of the page
+      // and 30px from the bottom at the bottom of the page
+      const scrollY = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const maxBallMove = window.innerHeight - 80; // 30px from top and bottom, 50px ball
+      const percent = maxScroll ? scrollY / maxScroll : 0;
+      const top = 30 + percent * maxBallMove;
+      ball.style.top = `${top}px`;
+    });
+  </script>
+
+  <!-- Add this before the closing </body> tag in your index.html -->
+  <script>
+    // Example: Show an alert when the page loads
+    window.onload = function() {
+      alert("Welcome to my website!");
+    };
+  </script>
+
+  <button id="backToTop" title="Go to top">⬆️ Back to Top</button>
+
+  <script>
+    // Animate the hero name on page load
+    window.onload = function() {
+      const firstName = document.querySelector('.first-name');
+      const lastName = document.querySelector('.last-name');
+      firstName.style.transition = 'color 1s, transform 1s';
+      lastName.style.transition = 'color 1s, transform 1s';
+      firstName.style.color = '#fc5c7d';
+      lastName.style.color = '#6a82fb';
+      firstName.style.transform = 'scale(1.2) rotate(-3deg)';
+      lastName.style.transform = 'scale(1.2) rotate(3deg)';
+      setTimeout(() => {
+        firstName.style.transform = '';
+        lastName.style.transform = '';
+      }, 1200);
+    };
+
+    // Smooth scroll to top when button is clicked
+    document.getElementById('backToTop').onclick = function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+  </script>
 </body>
 </html>
