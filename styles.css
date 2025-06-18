@@ -255,10 +255,8 @@ section {
     display: block;
   }
 }
-
 /* Enable smooth scrolling for anchor links */
 html {
   scroll-behavior: smooth;
 }
-
 /* ...existing code... */
