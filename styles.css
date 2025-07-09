@@ -2,7 +2,7 @@
 
 /* Add a background color and a simple background image to the whole page */
 body {
-  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+  background-color: #f0f0f0; /* Light gray background */
   /* Add a background image from the web (you can change the URL to any image you like) */
   background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -70,7 +70,7 @@ section {
 
 .nav-link::after {
   content: '';
-  display: block;
+  display: block; 
   height: 3px;
   width: 0;
   background: linear-gradient(90deg, #fc5c7d, #6a82fb);

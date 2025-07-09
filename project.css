@@ -1,0 +1,70 @@
+/* Project Section Styles */
+#projects {
+    padding: 20px 40px; /* Padding around the section */;
+    position: relative; /* Relative positioning for the pseudo-element */
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 30px;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    li{
+        position: relative; /* For the pseudo-element */
+        display: inline-block; /* Make the link a block element for padding */
+        margin: 0 50px; /* Space between links */
+    }
+}
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed; /* Fixed position to stay at the top */
+    width: 100%; /* Full width */
+    top: 0; /* Stick to the top */
+    left: 0; 
+    right: 0; 
+    z-index: 10; /* Ensure it stays on top */
+    text-align: center; /* Center the navigation links */
+    font-size: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UIback', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #350043;
+}
+
+/* Navigation Links */
+.nav-link {
+    padding: 20px 40px; /* Padding around the link */
+    font-weight: bold; /* Bold text */
+    font-size: 20px; /* Font size */
+    position: relative; /* For the pseudo-element */
+    border-radius: 10px; /* Rounded corners */
+    display: inline-block; /* Make the link a block element for padding */
+    margin: 0 10px; /* Space between links */
+    text-decoration: none; /* No underline */
+    color: #ffffff; /* Dark gray text */
+    text-shadow: 0 1px 4px rgb(146, 146, 146); /* Subtle white shadow for contrast */
+    text-transform: uppercase; /* Uppercase text */
+}
+/* Navigation Link Hover Effect */
+.nav-link::after {
+    content: ''; /* Empty content for the pseudo-element */
+    align-content: center; /* Center the underline */
+    height: 4px; /* Height of the underline */
+    width: 0; /* Start with no width */
+    background: linear-gradient(90deg, #350043, #000000); /* Gradient background for the underline */
+    transition: width 0.3s; /* Smooth transition for width */
+    border-radius: 10px; /* Rounded corners for the underline */
+    position: absolute; /* Position relative to the link */
+    left: 0; /* Start from the left edge of the link */
+    bottom: -6px; /* Position below the link */
+}
+/* Navigation Link Styles */
+.nav-link:hover {
+    border-radius: 10px; /* Maintain rounded corners on hover */
+    color: white; /* Ensure text remains white on hover */
+    background: linear-gradient(90deg, #350043, #000000); /* Gradient background on hover */
+    text-decoration: none; /* Ensure no underline on hover */
+}
+/* Navigation Link Hover Effect */
+.nav-link:hover::after {
+    width: 100%; /* Expand the underline to full width on hover */
+}
+
+/* Project Section Styles */
