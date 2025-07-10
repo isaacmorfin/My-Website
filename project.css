@@ -67,4 +67,235 @@
     width: 100%; /* Expand the underline to full width on hover */
 }
 
-/* Project Section Styles */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+.Food_menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-color: white 1px solid;
+    H4 {
+        padding-bottom: 10px;
+        font-size: 30px;
+    }
+    p2 {
+        font-size: 20px;
+        margin: 10px 0;
+        padding: 50px;
+    }
+    hf {
+        font-size: 24px;
+        font-weight: bold;
+        margin-bottom: 20px;
+        color: #c0392b; /* Tomato color */
+    }
+}
+h3 {
+  color: #c0392b; /* Tomato red */
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+#area-select {
+  font-size: 1.1rem;
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: 2px solid #c0392b;
+  background: linear-gradient(90deg, #fffdfa 70%, #ffe5d0 100%);
+  color: #3d2c1e;
+  margin: 24px 0;
+  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.1);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  appearance: none;
+  outline: none;
+  font-family: "Poppins", Arial, sans-serif;
+  font-weight: 600;
+  /* Add a food icon as a background */
+  background-image: url("https://img.icons8.com/emoji/48/000000/tomato-emoji.png");
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  background-size: 28px 28px;
+  padding-left: 48px;
+}
+
+/* Hide the tomato icon when an area is selected (value is not empty) */
+#area-select.selected {
+  background-image: none;
+  padding-left: 20px;
+}
+
+#area-select:focus {
+  border-color: #27ae60; /* Olive green */
+  box-shadow: 0 0 0 3px #eafaf1;
+}
+
+/* Style the dropdown arrow for a custom look */
+#area-select::-ms-expand {
+  display: none;
+}
+#area-select {
+  background-blend-mode: lighten;
+}
+#area-select option {
+  background: #fffdfa;
+  color: #3d2c1e;
+  font-weight: 500;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  background: #c0392b;
+  color: #fffdfa;
+  padding: 8px 18px;
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.1);
+  cursor: pointer;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+  background: #27ae60;
+  box-shadow: 0 4px 16px rgba(39, 174, 96, 0.12);
+}
+
+.meal {
+  background: #fffdfa;
+  border-radius: 14px;
+  box-shadow: 0 2px 12px rgba(192, 57, 43, 0.1);
+  padding: 18px;
+  margin: 16px;
+  display: inline-block;
+  vertical-align: top;
+  width: 220px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.meal:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 24px rgba(192, 57, 43, 0.18);
+  background: #fff3e6;
+}
+
+.meal img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.08);
+}
+
+.meal h3 {
+  font-size: 1.1rem;
+  margin: 0.5em 0 0.2em 0;
+}
+
+.modal {
+  /* Modal background is handled in JS */
+}
+
+.modal > div {
+  background: #fffdfa;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(192, 57, 43, 0.18);
+  padding: 32px 24px 24px 24px;
+  max-width: 420px;
+  width: 95%;
+  position: relative;
+  text-align: left;
+  animation: popIn 0.2s;
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.modal h2 {
+  font-size: 2rem;
+  color: #c0392b;
+  margin-bottom: 0.5em;
+  text-align: center;
+}
+
+.modal img {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 12px rgba(39, 174, 96, 0.1);
+}
+
+.modal h3 {
+  color: #27ae60;
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+.modal ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1em 0;
+}
+
+.modal ul li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.modal ul li::before {
+  content: "🍅";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 1.1em;
+}
+
+.modal ol {
+  padding-left: 1.2em;
+  margin: 0 0 1em 0;
+}
+
+.modal ol li {
+  margin-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.modal button {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: #c0392b;
+  color: #fffdfa;
+  border-radius: 50px;
+  padding: 6px 16px;
+  font-size: 1rem;
+  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.1);
+}
+
+.modal button:hover {
+  background: #27ae60;
+}
+
+@media (max-width: 600px) {
+  .meal {
+    width: 95%;
+    margin: 12px auto;
+  }
+  .modal > div {
+    padding: 18px 8px 18px 8px;
+  }
+}
