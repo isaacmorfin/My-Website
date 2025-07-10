@@ -27,7 +27,8 @@
               if (!entry.isIntersecting) {
                 // Section is not visible, clear the results
                 resultsDiv.innerHTML = "";
-                areaSelect.value = ""; // Reset the area select dropdown
+                areaSelect.value = ""; // Reset the select dropdown
+                areaSelect.classList.remove('selected');
               }
             });
           }, { threshold: 0 });

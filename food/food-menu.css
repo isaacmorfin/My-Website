@@ -3,16 +3,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: white;
     padding: 20px;
     border-radius: 8px;
-    border-color: white 1px solid;
+    border-color: #ffffff 1px solid;
     background-color: #ffd4cf;
     h4 {
         display: block;
         width: 100%;
         background: linear-gradient(90deg, #27ae60 60%, #b2f7ef 100%);
-        color: #fff;
+        color: #ffffff;
         font-size: 30px;
         margin: 0 0 16px 0;
         padding: 16px 0;
