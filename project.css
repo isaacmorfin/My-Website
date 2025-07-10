@@ -25,7 +25,12 @@
     text-align: center; /* Center the navigation links */
     font-size: 30px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UIback', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #350043;
+    background-image:
+      linear-gradient(90deg, #350043 0%, #6d217d 60%, #ffb347 100%),
+      url('data:image/svg+xml;utf8,<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><rect width="40" height="40" fill="none"/><path d="M0 40L40 0" stroke="white" stroke-opacity="0.04" stroke-width="4"/></svg>');
+    background-blend-mode: overlay;
+    border-bottom: 3px solid #ffb347;
+    box-shadow: 0 4px 24px 0 rgba(255, 179, 71, 0.15);
 }
 
 /* Navigation Links */
@@ -41,261 +46,162 @@
     color: #ffffff; /* Dark gray text */
     text-shadow: 0 1px 4px rgb(146, 146, 146); /* Subtle white shadow for contrast */
     text-transform: uppercase; /* Uppercase text */
+    background: linear-gradient(90deg, #350043 0%, #6d217d 100%);
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    transition: 
+        background-size 0.4s cubic-bezier(0.4,0,0.2,1),
+        color 0.3s, 
+        box-shadow 0.3s, 
+        transform 0.2s;
 }
 /* Navigation Link Hover Effect */
-.nav-link::after {
-    content: ''; /* Empty content for the pseudo-element */
-    align-content: center; /* Center the underline */
-    height: 4px; /* Height of the underline */
-    width: 0; /* Start with no width */
-    background: linear-gradient(90deg, #350043, #000000); /* Gradient background for the underline */
-    transition: width 0.3s; /* Smooth transition for width */
-    border-radius: 10px; /* Rounded corners for the underline */
-    position: absolute; /* Position relative to the link */
-    left: 0; /* Start from the left edge of the link */
-    bottom: -6px; /* Position below the link */
+.nav-link:hover, .nav-link:focus {
+    color: #fff;
+    background-size: 100% 100%;
+    box-shadow: 0 0 16px #ffb347, 0 0 32px #6d217d;
+    transform: scale(1.08);
 }
-/* Navigation Link Styles */
-.nav-link:hover {
-    border-radius: 10px; /* Maintain rounded corners on hover */
-    color: white; /* Ensure text remains white on hover */
-    background: linear-gradient(90deg, #350043, #000000); /* Gradient background on hover */
-    text-decoration: none; /* Ensure no underline on hover */
-}
-/* Navigation Link Hover Effect */
-.nav-link:hover::after {
-    width: 100%; /* Expand the underline to full width on hover */
+/* Active Link Styles */
+.nav-link.active, .nav-link:active {
+    background: #6d217d;
+    color: #fff;
+    box-shadow: 0 2px 8px rgba(53,0,67,0.12);
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
-.Food_menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: black;
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    border-color: white 1px solid;
-    H4 {
-        padding-bottom: 10px;
-        font-size: 30px;
-    }
-    p2 {
-        font-size: 20px;
-        margin: 10px 0;
-        padding: 50px;
-    }
-    hf {
-        font-size: 24px;
-        font-weight: bold;
-        margin-bottom: 20px;
-        color: #c0392b; /* Tomato color */
-    }
-}
-h3 {
-  color: #c0392b; /* Tomato red */
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-#area-select {
-  font-size: 1.1rem;
-  padding: 12px 20px;
-  border-radius: 16px;
-  border: 2px solid #c0392b;
-  background: linear-gradient(90deg, #fffdfa 70%, #ffe5d0 100%);
-  color: #3d2c1e;
-  margin: 24px 0;
-  box-shadow: 0 4px 16px rgba(192, 57, 43, 0.1);
-  transition: border-color 0.2s, box-shadow 0.2s;
-  appearance: none;
-  outline: none;
-  font-family: "Poppins", Arial, sans-serif;
-  font-weight: 600;
-  /* Add a food icon as a background */
-  background-image: url("https://img.icons8.com/emoji/48/000000/tomato-emoji.png");
-  background-repeat: no-repeat;
-  background-position: 12px center;
-  background-size: 28px 28px;
-  padding-left: 48px;
-}
-
-/* Hide the tomato icon when an area is selected (value is not empty) */
-#area-select.selected {
-  background-image: none;
-  padding-left: 20px;
-}
-
-#area-select:focus {
-  border-color: #27ae60; /* Olive green */
-  box-shadow: 0 0 0 3px #eafaf1;
-}
-
-/* Style the dropdown arrow for a custom look */
-#area-select::-ms-expand {
-  display: none;
-}
-#area-select {
-  background-blend-mode: lighten;
-}
-#area-select option {
-  background: #fffdfa;
-  color: #3d2c1e;
-  font-weight: 500;
-}
-
-button {
-  font-family: inherit;
-  font-size: 1rem;
-  border-radius: 6px;
-  border: none;
-  background: #c0392b;
-  color: #fffdfa;
-  padding: 8px 18px;
-  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.1);
-  cursor: pointer;
-  transition: background 0.2s, box-shadow 0.2s;
-}
-
-button:hover {
-  background: #27ae60;
-  box-shadow: 0 4px 16px rgba(39, 174, 96, 0.12);
-}
-
-.meal {
-  background: #fffdfa;
-  border-radius: 14px;
-  box-shadow: 0 2px 12px rgba(192, 57, 43, 0.1);
-  padding: 18px;
-  margin: 16px;
-  display: inline-block;
-  vertical-align: top;
-  width: 220px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-  cursor: pointer;
-}
-
-.meal:hover {
-  transform: translateY(-6px) scale(1.03);
-  box-shadow: 0 8px 24px rgba(192, 57, 43, 0.18);
-  background: #fff3e6;
-}
-
-.meal img {
-  width: 100%;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  box-shadow: 0 2px 8px rgba(39, 174, 96, 0.08);
-}
-
-.meal h3 {
-  font-size: 1.1rem;
-  margin: 0.5em 0 0.2em 0;
-}
-
-.modal {
-  /* Modal background is handled in JS */
-}
-
-.modal > div {
-  background: #fffdfa;
-  border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(192, 57, 43, 0.18);
-  padding: 32px 24px 24px 24px;
-  max-width: 420px;
-  width: 95%;
-  position: relative;
-  text-align: left;
-  animation: popIn 0.2s;
-}
-
-@keyframes popIn {
-  from {
-    transform: scale(0.95);
+/* Base card style */
+.project-section {
+    margin: 60px auto;
+    max-width: 700px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(53,0,67,0.18), 0 1.5px 0 #ffb347 inset;
+    padding: 40px 32px;
     opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
+    transform: translateY(60px) scale(0.96) rotateX(8deg);
+    transition: 
+        opacity 0.7s cubic-bezier(.22,.68,.53,1.01),
+        transform 0.7s cubic-bezier(.22,.68,.53,1.01),
+        box-shadow 0.7s;
+    will-change: transform, opacity;
+    color: #222;
 }
 
-.modal h2 {
-  font-size: 2rem;
-  color: #c0392b;
-  margin-bottom: 0.5em;
-  text-align: center;
+/* Project 1: Portfolio Website */
+.Project_1 {
+    background: linear-gradient(135deg, #fffdfa 70%, #ffe5d0 100%);
+    border-left: 8px solid #ffb347; /* Gold */
 }
 
-.modal img {
-  width: 100%;
-  border-radius: 12px;
-  margin-bottom: 18px;
-  box-shadow: 0 2px 12px rgba(39, 174, 96, 0.1);
+/* Project 2: Food Menu */
+.Food_menu {
+    background: linear-gradient(135deg, #f0fff3 60%, #b2f7ef 100%);
+    border-left: 8px solid #27ae60; /* Green */
 }
 
-.modal h3 {
-  color: #27ae60;
-  margin-top: 1.2em;
-  margin-bottom: 0.5em;
+/* Project 3: Calculator */
+.Project_3 {
+    background: linear-gradient(135deg, #e3e6f3 60%, #b2b7ff 100%);
+    border-left: 8px solid #3f51b5; /* Indigo */
 }
 
-.modal ul {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 1em 0;
+/* Project 4: Weather App */
+.Project_4 {
+    background: linear-gradient(135deg, #e0f7fa 60%, #b2ebf2 100%);
+    border-left: 8px solid #00bcd4; /* Cyan */
 }
 
-.modal ul li {
-  position: relative;
-  padding-left: 28px;
-  margin-bottom: 8px;
-  font-size: 1rem;
+/* Project 5: Blog */
+.Project_5 {
+    background: linear-gradient(135deg, #fff0f6 60%, #ffd6e0 100%);
+    border-left: 8px solid #e91e63; /* Pink */
 }
 
-.modal ul li::before {
-  content: "🍅";
-  position: absolute;
-  left: 0;
-  top: 0;
-  font-size: 1.1em;
+/* Project 6: To-Do List */
+.Project_6 {
+    background: linear-gradient(135deg, #f4ffe3 60%, #d0ffb3 100%);
+    border-left: 8px solid #8bc34a; /* Light Green */
 }
 
-.modal ol {
-  padding-left: 1.2em;
-  margin: 0 0 1em 0;
+/* Project 7: Portfolio V2 */
+.Project_7 {
+    background: linear-gradient(135deg, #f3e6ff 60%, #d1b3ff 100%);
+    border-left: 8px solid #9c27b0; /* Purple */
 }
 
-.modal ol li {
-  margin-bottom: 10px;
-  font-size: 1rem;
-  line-height: 1.6;
+/* Project 8: E-commerce */
+.Project_8 {
+    background: linear-gradient(135deg, #fffbe7 60%, #ffe5b4 100%);
+    border-left: 8px solid #ff9800; /* Orange */
 }
 
-.modal button {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: #c0392b;
-  color: #fffdfa;
-  border-radius: 50px;
-  padding: 6px 16px;
-  font-size: 1rem;
-  box-shadow: 0 2px 8px rgba(192, 57, 43, 0.1);
+/* Project 9: Responsive Design */
+.Project_9 {
+    background: linear-gradient(135deg, #e3f6fd 60%, #b3e5fc 100%);
+    border-left: 8px solid #2196f3; /* Blue */
 }
 
-.modal button:hover {
-  background: #27ae60;
+/* Project 10: Quiz */
+.Project_10 {
+    background: linear-gradient(135deg, #f9e7ff 60%, #e1b3ff 100%);
+    border-left: 8px solid #ab47bc; /* Violet */
 }
 
-@media (max-width: 600px) {
-  .meal {
-    width: 95%;
-    margin: 12px auto;
-  }
-  .modal > div {
-    padding: 18px 8px 18px 8px;
-  }
+/* When visible, animate in */
+.project-section.visible { opacity: 1; transform: none; }
+
+/* Unique animations for each project */
+.project-1.visible { animation: pop-in 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-2.visible { animation: slide-in-left 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-3.visible { animation: flip-in 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-4.visible { animation: fade-in-scale 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-5.visible { animation: slide-in-right 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-6.visible { animation: rotate-in 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-7.visible { animation: bounce-in 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-8.visible { animation: zoom-in 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-9.visible { animation: fade-in-up 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+.project-10.visible { animation: swing-in 0.8s cubic-bezier(.22,.68,.53,1.01) forwards; }
+
+/* Keyframes for animations */
+@keyframes pop-in {
+    from { opacity: 0; transform: scale(0.8) translateY(60px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+@keyframes slide-in-left {
+    from { opacity: 0; transform: translateX(-80px) skewY(4deg); }
+    to { opacity: 1; transform: translateX(0) skewY(0); }
+}
+@keyframes flip-in {
+    from { opacity: 0; transform: rotateY(90deg) scale(0.9); }
+    to { opacity: 1; transform: rotateY(0) scale(1); }
+}
+@keyframes fade-in-scale {
+    from { opacity: 0; transform: scale(0.7); }
+    to { opacity: 1; transform: scale(1); }
+}
+@keyframes slide-in-right {
+    from { opacity: 0; transform: translateX(80px) skewY(-4deg); }
+    to { opacity: 1; transform: translateX(0) skewY(0); }
+}
+@keyframes rotate-in {
+    from { opacity: 0; transform: rotateZ(-10deg) scale(0.9); }
+    to { opacity: 1; transform: rotateZ(0) scale(1); }
+}
+@keyframes bounce-in {
+    0% { opacity: 0; transform: translateY(80px) scale(0.9);}
+    60% { opacity: 1; transform: translateY(-20px) scale(1.05);}
+    80% { transform: translateY(10px) scale(0.98);}
+    100% { transform: translateY(0) scale(1);}
+}
+@keyframes zoom-in {
+    from { opacity: 0; transform: scale(0.5);}
+    to { opacity: 1; transform: scale(1);}
+}
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(80px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+@keyframes swing-in {
+    0% { opacity: 0; transform: rotateY(-90deg);}
+    100% { opacity: 1; transform: rotateY(0);}
 }

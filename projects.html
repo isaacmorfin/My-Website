@@ -4,6 +4,7 @@
         <meta charset ="UTF-8">
         <title>My Portfolio - Projects</title>
         <!-- Link to the CSS file -->
+        <link rel="stylesheet" href="food-menu.css">
         <link rel="stylesheet" href="project.css">
     </head>
     <body>
@@ -22,54 +23,74 @@
             <p>Feel free to check out my Github <a href="https://github.com/isaacmorfin" target="_blank">isaacmorfin</a> for more projects!</p>
         </section>
         <!-- Section for each project in a list-->
-         <section class="Project_1" id="projects">
+         <section class="Project_1 project-section" id="projects">
             <h6>Project 1: My First Portfolio Website</h6>
             <p>This is the first version of my portfolio website, showcasing my skills and projects. It was built using HTML, CSS, and JavaScript.</p>
             <p>Check it out on <a href="index.html" target="_blank">Home</a>!</p>
          </section>
-        <section class="Food_menu" id="projects">
+        <section class="Food_menu project-section" id="projects">
             <h4>Project 2: Food Menu</h4>
-            <p2>This project is a simple food menu website that displays various dishes and their descriptions. It was created using HTML and CSS.</p2>
+            <p2>
+<p>
+    This project is an interactive food menu website where users can explore a variety of dishes from around the world. Users can select a region to discover popular meals, view images, and read brief descriptions. The website is designed to be user-friendly, featuring a clean layout and helpful visuals.
+</p>
             <hf>Food Search!</hf>
             <select name="area-select" id="area-select">
             <option value="" style="text-align: center;">Select Area</option>
             </select>
             <div id="results"></div>
         </section>
-        <section class="Project_3" id="projects">
+        <section class="Project_3 project-section" id="projects">
             <h5>Project 3: Simple Calculator</h5>
             <p>This is a basic calculator application that performs simple arithmetic operations. It was built using HTML, CSS, and JavaScript.</p>
         </section>
-        <section class="Project_4" id="projects">
+        <section class="Project_4 project-section" id="projects">
             <h6>Project 4: Weather App</h6>
             <p>This project is a weather application that fetches real-time weather data from an API and displays it to the user. It was created using HTML, CSS, and JavaScript.</p>
         </section>
-        <section class="Project_5" id="projects">
+        <section class="Project_5 project-section" id="projects">
             <h6>Project 5: Personal Blog</h6>
             <p>This is a personal blog website where I share my thoughts and experiences. It was built using HTML, CSS, and JavaScript.</p>
         </section>
-        <section class="Project_6" id="projects">
+        <section class="Project_6 project-section" id="projects">
             <h6>Project 6: To-Do List App</h6>
             <p>This project is a simple to-do list application that allows users to add, edit, and delete tasks. It was created using HTML, CSS, and JavaScript.</p>
         </section>
-        <section class="Project_7" id="projects">
+        <section class="Project_7 project-section" id="projects">
             <h6>Project 7: Portfolio Website (Version 2)</h6>
             <p>This is the second version of my portfolio website, featuring a more modern design and improved functionality. It was built using HTML, CSS, and JavaScript.</p>
         </section>
-        <section class="Project_8" id="projects">
+        <section class="Project_8 project-section" id="projects">
             <h6>Project 8: E-commerce Website</h6>
             <p>This project is an e-commerce website that allows users to browse and purchase products online. It was created using HTML, CSS, and JavaScript.</p>
         </section>
-        <section class="Project_9" id="projects">
+        <section class="Project_9 project-section" id="projects">
             <h6>Project 9: Responsive Web Design</h6>
             <p>This project demonstrates responsive web design techniques, ensuring that the website looks great on all devices. It was built using HTML, CSS, and JavaScript.</p>
         </section>
-        <section class="Project_10" id="projects">
+        <section class="Project_10 project-section" id="projects">
             <h6>Project 10: Interactive Quiz</h6>
             <p>This is an interactive quiz application that tests users' knowledge on various topics. It was created using HTML, CSS, and JavaScript.</p>
         </section>
     </body>
     <script src="food-menu.js"></script>
+    <script>
+        // Trigger .visible when section enters viewport
+        const sections = document.querySelectorAll('.project-section');
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if(entry.isIntersecting) {
+              entry.target.classList.add('visible');
+            }
+            else {
+              entry.target.classList.remove('visible');
+            }
+          });
+        }, { threshold: 0.2 });
+
+        sections.forEach(section => observer.observe(section));
+        
+    </script>
     <footer>
         <p>&copy; 2023 Isaac Morfin. All rights reserved.</p>
         <p>Follow me on <a href="" target="_blank">GitHub</a> and <a href="" target="_blank">LinkedIn</a>.</p>
