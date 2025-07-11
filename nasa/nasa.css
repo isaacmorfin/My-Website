@@ -20,17 +20,15 @@ h1 {
 /* Top left logo */
 .logo {
   width: 140px;
-  position: static;
-  margin-left: 0;
-  margin-right: auto;
+  position: fixed;
+  margin-right: 630px;
 }
 
 /* Top right logo */
 .logo-1 {
   width: 100px;
-  position: static;
-  margin-left: auto;
-  margin-right: 0;
+  position: fixed;
+  margin-left: 630px;
 }
 
 
@@ -42,7 +40,6 @@ h1 {
   gap: 10px;
   justify-content: center;
   align-items: stretch;
-  width: 100%;
   margin-bottom: 20px;
   padding: 0 20px;
 }
