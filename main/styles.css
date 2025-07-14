@@ -2,9 +2,7 @@
 
 /* Add a background color and a simple background image to the whole page */
 body {
-  background-color: #f0f0f0; /* Light gray background */
-  /* Add a background image from the web (you can change the URL to any image you like) */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80');
+  background-color: #000000; /* Light gray background */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover;       /* Make the image cover the whole background */
   background-attachment: fixed; /* Keep the image fixed when scrolling */
@@ -65,7 +63,7 @@ section {
   transition: color 0.3s, background 0.3s;
   padding: 8px 16px;
   border-radius: 6px;
-  text-shadow: 0 1px 4px rgba(255,255,255,0.5); /* Subtle white shadow for contrast */
+  text-shadow: 0 1px 4px rgb(255, 255, 255); /* Subtle white shadow for contrast */
 }
 
 .nav-link::after {
@@ -106,8 +104,9 @@ section {
   border-radius: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  position: relative;
   min-height: 60vh; /* Adjust as needed for vertical centering */
 }
 

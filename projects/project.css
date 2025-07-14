@@ -14,6 +14,10 @@
         margin: 0 50px; /* Space between links */
     }
 }
+h2 {
+    padding: 20px 0; /* Padding around the heading */
+    margin: 10px; /* Margin around the heading */
+}
 /* Navigation Bar Styles */
 .navbar {
     position: fixed; /* Fixed position to stay at the top */
@@ -204,4 +208,59 @@
 @keyframes swing-in {
     0% { opacity: 0; transform: rotateY(-90deg);}
     100% { opacity: 1; transform: rotateY(0);}
+}
+
+@media screen and (max-width: 845px) {
+    .project-section {
+        padding: 20px 16px; /* Reduce padding on smaller screens */
+        font-size: 18px; /* Smaller font size */
+    }
+    .nav-link {
+        padding: 10px 20px; /* Smaller padding for links */
+        font-size: 16px; /* Smaller font size for links */
+    }
+    .navbar {
+        font-size: 24px; /* Smaller navbar font size */
+    }
+    h2 {
+        font-size: 24px; /* Smaller heading font size */
+    }
+    .project-section.visible {
+        transform: translateY(40px) scale(0.96) rotateX(4deg); /* Less pronounced animation */
+    }
+}
+/* Example: Animate a button on hover */
+.button {
+  background: #6a82fb;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s, background 0.3s;
+  cursor: pointer;
+}
+.button:hover {
+  background: #fc5c7d;
+  transform: scale(1.1) rotate(-2deg);
+}
+/* Back to top button */
+#backToTop {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  padding: 12px 20px;
+  font-size: 1em;
+  background: #6a82fb;
+  color: #fff;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  opacity: 0.7;
+  transition: opacity 0.3s, background 0.3s;
+  z-index: 1000;
+}
+#backToTop:hover {
+  opacity: 1;
+  background: #fc5c7d;
 }
