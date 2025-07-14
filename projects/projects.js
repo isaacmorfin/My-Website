@@ -34,3 +34,20 @@
           }, { threshold: 0 });
           foodMenuObserver.observe(foodMenuSection);
         }
+
+// Reset projects API results when not visible
+const projectsSection = document.getElementById('projects-section');
+if (projectsSection) {
+  const projectsObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        // Section is not visible, clear the results
+        const projectsResultsDiv = document.getElementById('projects-results');
+        if (projectsResultsDiv) {
+          projectsResultsDiv.innerHTML = "";
+        }
+      }
+    });
+  }, { threshold: 0 });
+  projectsObserver.observe(projectsSection);
+}

@@ -58,27 +58,7 @@ window.addEventListener('DOMContentLoaded', () => {
         clearGallery();
         const images = Array.isArray(data) ? data : [data];
 
-        // Create a row of dates below the buttons with a rocket emoji
         const dateRow = document.createElement('div');
-        dateRow.id = 'date-row';
-        dateRow.style.display = 'flex';
-        dateRow.style.justifyContent = 'center';
-        dateRow.style.gap = '16px';
-        dateRow.style.margin = '20px 0 10px 0';
-
-        images.forEach(item => {
-          const dateBox = document.createElement('div');
-          dateBox.textContent = `🚀 Date: ${formatDate(item.date)}`;
-          dateBox.style.background = '#1a2236';
-          dateBox.style.color = '#fff';
-          dateBox.style.padding = '6px 16px';
-          dateBox.style.borderRadius = '8px';
-          dateBox.style.letterSpacing = '1px';
-          dateRow.appendChild(dateBox);
-        });
-
-        gallery.parentNode.insertBefore(dateRow, gallery);
-
         // Show all images in the gallery
         images.forEach(item => {
           const card = document.createElement('div');
@@ -283,4 +263,25 @@ function setupDateInputs(startInput, endInput) {
     endDate.setDate(startDate.getDate() + 8);
     endInput.value = endDate > new Date(today) ? today : endDate.toISOString().split('T')[0];
   });
+}
+// Intersection Observer to clear results when the section is not visible
+const nasaSection = document.getElementById('nasa-section');
+if (nasaSection) {
+  const nasaObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) {
+        // Section is not visible, reset gallery to placeholder
+        const gallery = document.getElementById('gallery');
+        if (gallery) {
+          gallery.innerHTML = `
+            <div class="placeholder">
+              <div class="placeholder-icon">🔭</div>
+              <p>Select a date range and click "Get Space Images" to explore the cosmos!</p>
+            </div>
+          `;
+        }
+      }
+    });
+  }, { threshold: 0 });
+  nasaObserver.observe(nasaSection);
 }
