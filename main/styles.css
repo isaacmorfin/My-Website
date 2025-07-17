@@ -3,14 +3,9 @@
 /* Add a background color and a simple background image to the whole page */
 body {
   background-color: #000000; /* Light gray background */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover;       /* Make the image cover the whole background */
-  background-attachment: fixed; /* Keep the image fixed when scrolling */
   margin: 0;
   padding: 0;
-  min-height: 100vh;
   font-family: Arial, sans-serif;
-  background-position: center;
 }
 
 /* Add a semi-transparent background to sections so text is easy to read */
@@ -18,7 +13,7 @@ section {
   background: rgba(255, 255, 255, 0.85); /* White with some transparency */
   margin: 20px auto;
   padding: 20px;
-  max-width: 600px;
+  max-width: 1000px; /* Limit width for readability */
   border-radius: 8px;
 }
 
@@ -27,7 +22,7 @@ section {
   display: flex;
   justify-content: center;
   gap: 40px;
-  background: rgba(255,255,255,0.95); /* Brighter background */
+  background: rgba(255, 255, 255, 0.95); /* Brighter background */
   padding: 18px 0;
   position: sticky;
   top: 0;
@@ -95,35 +90,36 @@ section {
 }
 
 /* Hero section with background color */
-.hero {
-  background-color: #23406e; /* Deep blue */
-  color: #fff;
-  text-align: center;
-  padding: 50px 10px 30px 10px;
-  margin: 0;
-  border-radius: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  position: relative;
-  min-height: 60vh; /* Adjust as needed for vertical centering */
-}
-
 /* Optional: Make the hero section stand out with a subtle background */
 .hero {
   background: rgba(255,255,255,0.4); /* Light overlay for readability */
   border-radius: 18px;
   margin: 40px auto 32px auto;
   width: 90%;
-  max-width: 600px;
+  max-width: 6000px;
   box-shadow: 0 4px 24px rgba(0,0,0,0.07);
   padding: 40px 0;
+  color: #fff;
+  text-align: center;
+   flex-direction: column;
+   min-height: 60vh; /* Adjust as needed for vertical centering */
 }
 
+.col {
+  max-height: 500px; /* Example height for columns */
+  position: relative; /* For absolute positioning of child elements */
+}
+.profile-picture {
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 90%;
+  border: 6px solid #fff;
+}
 .hero h1 {
   font-size: 2.5em;
   margin-bottom: 0.2em;
+  padding: 0 20px;
 }
 
 .hero .first-name, .hero .last-name {
